@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imgBP"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/bp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/help"
+        android:drawableTint="#000000"
+        android:text="Ayuda"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgBP" />
+
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Versión: 12.8.0"
+        android:textColor="#666666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBP" />
+
+
+    <FrameLayout
+        android:id="@+id/panelPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:layout_margin="24dp"
+        android:background="@drawable/panel_radius"
+        app:layout_constraintTop_toBottomOf="@id/txtVersion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/cardFront"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            app:lottie_rawRes="@raw/banca"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+
+        <ImageView
+            android:id="@+id/cardBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:scaleType="centerInside"
+            android:src="@drawable/qr" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnFlip"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="-14dp"
+
+        android:backgroundTint="#C7CFD5"
+        android:drawableEnd="@drawable/syncicon"
+        android:drawablePadding="8dp"
+        android:text="Ver mi QR"
+        android:textAllCaps="false"
+        android:textColor="#3F51B5"
+        android:textColorLink="#21578C"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panelPrincipal" />
+
+    <!-- CÍRCULOS -->
+    <LinearLayout
+        android:id="@+id/layoutCirculos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panelPrincipal">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/radius_circle"
+            android:src="@drawable/shield" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/radius_circle"
+            android:src="@drawable/deuna" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/radius_circle"
+            android:src="@drawable/key" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutCirculosTextos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCirculos">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Verificar\ntransferencia" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Pagar\ncon QR" />
+
+        <TextView
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Clave\nDigital" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutCuadrados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutCirculosTextos">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/panel_radius"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/user" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Usuario y\ncontraseña" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/panel_radius"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/dedo" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Huella /\nFace ID" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/panel_radius"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/pin" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Pin de\n6 dígitos" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
